@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
   devtool: 'inline-source-map',
   entry: ['./client/client.js'],
@@ -6,6 +8,11 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/'
   },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       {
