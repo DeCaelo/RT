@@ -2,8 +2,21 @@ import React, { Component } from 'react'
 
 class TextInput extends Component {
 
+  constructor(props, context) {
+    super(props, context)
+    this.state = {
+      inputText: 'initial text'
+    }
+  }
+
   render() {
-    return <div>This is the TextInput Component :) </div>
+    return (
+      <input
+        type="text"
+        placeholder="This is going to be text"
+        value={this.state.inputText}
+      />
+    )
   }
 
 }
