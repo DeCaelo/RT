@@ -9,12 +9,19 @@ class TextInput extends Component {
     }
   }
 
+  handleChange(event) {
+    this.setState({
+      inputText: event.target.value
+    })
+  }
+
   render() {
     return (
       <input
         type="text"
         placeholder="This is going to be text"
         value={this.state.inputText}
+        onChange={this.handleChange.bind(this)}
       />
     )
   }
