@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
 
 class TodoList extends Component {
-
+//loop for todos with id & text
   render() {
-    return <div>this is todo list</div>
+    return (
+      <ul>
+
+        {
+          this.props.todos.map((todo) => {
+            return <li key={todo.id}>{todo.text}</li>
+          })
+        }
+
+      </ul>
+    )
   }
 
 }

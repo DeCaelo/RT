@@ -5,10 +5,10 @@ function getId(state) {
   }, -1) + 1
 }
 
-export default function reducer(state, action) {
+let reducer = function(state, action) {
   switch(action.type) {
     case 'ADD_TODO':
-      Object.assign({}, state, {
+      return Object.assign({}, state, {
         todos: [{
           //add new todo info
           text: action.text,
@@ -20,3 +20,5 @@ export default function reducer(state, action) {
       return  state;
   }
 }
+
+export default reducer
